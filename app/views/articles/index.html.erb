@@ -1,0 +1,32 @@
+<%= render 'longer_feature'%>
+
+<%= render 'medium_feature'%>
+
+<div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        From the Firehose
+      </h3>
+    
+
+      <p style="color: green"><%= notice %></p>
+
+      <%= link_to "New article", new_article_path, class: "btn btn-primary" %>
+
+      <div id="articles">
+        <% @articles.each do |article| %>
+          <%= render article %>
+          <p>
+            <%= link_to "Show this article", article %>
+          </p>
+        <% end %>
+      </div>
+
+      <%= render 'pagination' %>
+    </div>
+  <%= render 'right_side' %>
+
+</div>
+
+
+

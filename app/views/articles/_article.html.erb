@@ -1,0 +1,26 @@
+<div id="<%= dom_id article %>">
+
+</div>
+
+<article class="blog-post">
+    <h2 class="display-5 link-body-emphasis mb-1"><%= article.title %></h2>
+    <p class="blog-post-meta"><%= month_day_year(article.created_at) %><a href="#">Chris</a></p>
+
+    <p>
+     <%= truncate(article.body, length: 150) %>
+    </p>
+
+    <p>
+     <%= link_to "continue reading...", article,class:"btn btn-link"  %>
+    </p>
+
+    <div class="d-flex flex-row">
+
+      <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-secondary"%>
+     
+      <%= button_to "Destroy this article", article,
+      method: :delete ,
+      class: "btn btn-danger"
+      %>         
+    </div>
+</article>
